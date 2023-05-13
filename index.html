@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/imgs/Netflix_Icon_RGB.png">
+    <title>Netflix Clone</title>
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-5 py-3">
+        <!-- Logo Netflix -->
+        <a class="navbar-brand" href="index.html"><img src="assets/imgs/Netflix_Logo_RGB.png" /></a>
+        <!-- Mobile menu -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                    fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 
+                    0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 
+                    .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg></span>
+        </button>
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#shows">TV Shows</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#movies">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#recent">Recently Added</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#list">My List</a>
+                </li>
+            </ul>
+            <!-- Searchbar and Option -->
+            <ul class="navbar-nav ml-auto text-light">
+                <i class="bi bi-search mx-2 my-auto cursor-pointer"></i>
+                <span class="mx-2 my-auto cursor-pointer">KIDS</span>
+                <i class="bi bi-bell-fill mx-2 my-auto cursor-pointer"></i>
+                <!--  User Profile -->
+                <img class="mx-2 my-auto cursor-pointer" src="assets/imgs/Netflix_User.png" alt="user" />
+                <div class="dropdown-toggle mx-2 my-auto cursor-pointer"></div>
+            </ul>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="bg-dark text-light px-5">
+        <!-- Title Section -->
+        <div class="d-flex justify-content-between mb-4 pt-3">
+            <div class="d-flex">
+                <h1 class="mr-5">TV Shows</h1>
+                <!-- Genre Button -->
+                <div class="dropdown py-2" id="genre">
+                    <button class="btn bg-black text-light font-weight-bold border-light dropdown-toggle" type="button"
+                        data-toggle="dropdown" aria-expanded="false">Genres</button>
+                    <div class="dropdown-menu bg-black border-light">
+                        <a class="dropdown-item text-white" href="#action">Action</a>
+                        <a class="dropdown-item text-white" href="#comedy">Comedy</a>
+                        <a class="dropdown-item text-white" href="#horror">Horror</a>
+                    </div>
+                </div>
+            </div>
+            <div class="py-2" id="adaptive">
+                <button class="btn bg-dark text-light border-light" type="button"><i class="bi bi-list"></i></button>
+                <button class="btn bg-dark text-gray border-gray" type="button"><i
+                        class="bi bi-grid-3x2-gap-fill"></i></button>
+            </div>
+        </div>
+        <!-- Slider "Trending Now" -->
+        <section class="movie-row mr-5 pb-5">
+            <h3 class="mb-3">Trending now</h3>
+            <div class="row no-gutters flex-nowrap">
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/1.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/2.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/3.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/4.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/5.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/6.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/7.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="movie-shadow"></div>
+                </div>
+        </section>
+        <!-- Slider "Watch It Again" -->
+        <section class="movie-row mr-5 pb-5">
+            <h3 class="mb-3">Watch It Again</h3>
+            <div class="row no-gutters flex-nowrap">
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/8.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/9.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/10.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/11.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/12.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/13.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/14.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="movie-shadow"></div>
+                </div>
+        </section>
+        <!-- Slider "New Releases" -->
+        <section class="movie-row mr-5 pb-5">
+            <h3 class="mb-3">New Releases</h3>
+            <div class="row no-gutters flex-nowrap">
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/15.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/16.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/17.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/18.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/1.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/2.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 mx-1 movie-card">
+                    <img src="assets/imgs/movies/3.png" alt="film">
+                    <div class="movie-info bg-dark px-3 py-2">
+                        <div class="movie-commands d-flex justify-content-between mb-2">
+                            <div>
+                                <i class="bi bi-play-circle-fill mr-1"></i>
+                                <i class="bi bi-plus-circle mx-1"></i>
+                                <i class="bi bi-hand-thumbs-up mx-1"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-arrow-down-circle"></i>
+                            </div>
+                        </div>
+                        <div class="movie-description d-flex flex-row align-center text-light">
+                            <p class="text-success font-weight-bold mr-2">80% compatibile</p>
+                            <p class="text-light mr-2">10 episodi</p>
+                            <i class="bi bi-badge-hd mr-2"></i>
+                        </div>
+                        <div class="movie-description text-light">
+                            <ul class="d-flex flex-row text-light p-0">
+                                <li class="pr-3 mr-3">Action</li>
+                                <li class="pr-3 mr-3">Comedy</li>
+                                <li class="pr-3 mr-3">Horror</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="movie-shadow"></div>
+                </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="text-lg-start bg-dark text-gray pt-5 px-5">
+        <section>
+            <div class="container">
+                <!-- Social -->
+                <div class="py-3">
+                    <i class="bi bi-facebook text-white mr-3"></i>
+                    <i class="bi bi-instagram text-white mx-3"></i>
+                    <i class="bi bi-twitter text-white mx-3"></i>
+                    <i class="bi bi-youtube text-white mx-3"></i>
+                </div>
+                <!-- Footer info -->
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 col-xl-3">
+                        <p><a class="link">Audiodescrizione</a></p>
+                        <p><a class="link">Rapporto con gli investitori</a></p>
+                        <p><a class="link">Note legali</a></p>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xl-3">
+                        <p><a class="link">Centro assistenza</a></p>
+                        <p><a class="link">Opportunità di lavoro</a></p>
+                        <p><a class="link">Preferenze per i cookie</a></p>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xl-3">
+                        <p><a class="link">Carte regalo</a></p>
+                        <p><a class="link">Condizioni di utilizzo</a></p>
+                        <p><a class="link">Informazioni sull'azienda</a></p>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-xl-3">
+                        <p><a class="link">Media Center</a></p>
+                        <p><a class="link">Privacy</a></p>
+                        <p><a class="link">Contattaci</a></p>
+                    </div>
+                </div>
+                <button class="btn bg-dark text-gray border-gray" type="button">Codice di servizio</button>
+                <!-- Copyright -->
+                <div class="text-left text-gray pt-3 pb-1">
+                    <p>© 1997-2023 Netflix, Inc.</p>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
